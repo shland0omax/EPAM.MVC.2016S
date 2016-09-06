@@ -6,13 +6,17 @@ using System.Web.Mvc;
 
 namespace Day1.Controllers
 {
-    public class HomeController : Controller
+    public class TestController : Controller
     {
-        //[Route("HomieHome")]
-        public ActionResult Index(int? id)
+        // GET: Test
+        public ActionResult Index(int id)
         {
-            if (id == null) id = 0;
             ViewBag.Id = id;
+            return View();
+        }
+
+        public ActionResult AnotherAction()
+        {
             return View();
         }
     }
