@@ -22,7 +22,7 @@ namespace Day1.Tests
             value = routes.GetRouteData(Mocking.CreateHttpContext(url))?.Route != null;
         };
 
-        It fails = () => value.ShouldBeTrue();
+        It fails = () => value.ShouldBeFalse();
     }
 
     [Subject("Routing")]

@@ -14,7 +14,7 @@ namespace Day1
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             //attributes binded
-            routes.MapMvcAttributeRoutes();
+            //routes.MapMvcAttributeRoutes();
 
             //static, optional, custom
             routes.MapRoute(
