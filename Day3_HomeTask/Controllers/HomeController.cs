@@ -14,21 +14,20 @@ namespace Day3_HomeTask.Controllers
         {
             return View("Person", UserRepository.GetPerson());
         }
+
+        [ActionName("ChangeSide")]
+        [HttpPost]
+        public ActionResult ChangeSideConfirm()
+        {
+            UserRepository.GetPerson().IsDarkSided = true;
+            return RedirectToAction("Index");
+        }
         
         [ChildActionOnly]
         [HttpGet]
         public ActionResult ChangeSide()
         {
-            return PartialView("_ChangeSide");
-        }
-
-        [ActionName("ChangeSide")]
-        [HttpPost]
-        public ActionResult ChangeSidePost()
-        {
-            var p = UserRepository.GetPerson();
-            p.IsDarkSided = !p.IsDarkSided;
-            return RedirectToAction("Index");
+            return PartialView("Footer");
         }
     }
 }

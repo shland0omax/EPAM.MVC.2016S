@@ -7,7 +7,7 @@ using Moq;
 
 namespace Day1.Tests
 {
-    public static class Mocking
+    public static class TestHelper
     {
         public static HttpContextBase CreateHttpContext(string url = null, string httpMethod = "GET")
         {

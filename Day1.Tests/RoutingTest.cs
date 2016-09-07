@@ -19,10 +19,10 @@ namespace Day1.Tests
 
         Because of = () =>
         {
-            value = routes.GetRouteData(Mocking.CreateHttpContext(url))?.Route != null;
+            value = routes.GetRouteData(TestHelper.CreateHttpContext(url))?.Route != null;
         };
 
-        It fails = () => value.ShouldBeFalse();
+        It fails = () => value.ShouldBeTrue();
     }
 
     [Subject("Routing")]
@@ -45,10 +45,10 @@ namespace Day1.Tests
             routeProperties = null;
         };
 
-        Because of = () => result = routes.GetRouteData(Mocking.CreateHttpContext(url));
+        Because of = () => result = routes.GetRouteData(TestHelper.CreateHttpContext(url));
 
         It should_pass = () => result.ShouldNotBeNull();
-        It should_also_pass = () => Mocking.TestIncomingRouteResult(result, controller, action, routeProperties).ShouldBeTrue();
+        It should_also_pass = () => TestHelper.TestIncomingRouteResult(result, controller, action, routeProperties).ShouldBeTrue();
 
     }
 }

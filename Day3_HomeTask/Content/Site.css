@@ -16,3 +16,12 @@ textarea {
     max-width: 280px;
 }
 
+.lightSide {
+    background-color: white;
+    color: black
+}
+
+.darkSide {
+    background-color: black;
+    color: white;
+}
